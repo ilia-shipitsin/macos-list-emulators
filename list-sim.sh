@@ -7,5 +7,6 @@ xcodes=`find . -type d -name "Xcode*" -maxdepth 1 -print | awk -F '/' '{printf("
 for xcode in $xcodes; do
   echo $xcode | awk '{printf("/Applications/%s/Contents/Developer/usr/bin/simctl list -j devices\n", $1);}' | sh > ~/sims/$xcode
 done
-cd ~
+
+ls ~/sims
 
