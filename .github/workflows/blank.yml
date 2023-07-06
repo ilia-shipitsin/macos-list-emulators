@@ -34,5 +34,5 @@ jobs:
 
       - uses: actions/upload-artifact@v3
         with:
-          name: sims
+          name: sims-${{ matrix.os }}
           path: ~/sims/**/*
