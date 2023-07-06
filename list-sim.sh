@@ -1,5 +1,10 @@
 #!/bin/bash
 
+mkdir ~/sims
+
 cd /Applications
-find . -type d -name "Xcode*" -maxdepth 1 -print | awk -F '/' '{printf("/Applications/%s/Contents/Developer/usr/bin/simctl list -j devices\n", $2);}'
+xcodes=`find . -type d -name "Xcode*" -maxdepth 1 -print | awk -F '/' '{printf("%s\n", $2);}'`
+for xcode in $xcodes; do
+  echo $code | awk '{printf("/Applications/%s/Contents/Developer/usr/bin/simctl list -j devices\n", $2);}' | sh > ~/sims/$xcode
+done
 
